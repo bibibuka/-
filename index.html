@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме | Василиса - Project Manager</title>
-    <meta name="description" content="Резюме Junior Project Manager / Координатора.">
     
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -49,28 +48,25 @@
         #scroll-dragon-track { position: fixed; top: 5vh; right: 20px; height: 90vh; width: 4px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; z-index: 50; }
         #scroll-dragon-fire { position: absolute; top: 0; left: 0; width: 100%; height: 0%; background: linear-gradient(to bottom, transparent, #dc2626, #f59e0b); box-shadow: 0 0 15px #dc2626; }
         
-        /* Контейнер головы правого дракона */
         #scroll-dragon-head {
             position: absolute; left: 50%; transform: translateX(-50%);
             width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
             color: #ef4444; font-size: 24px; filter: drop-shadow(0 0 10px #f59e0b); z-index: 51;
         }
-        /* Статичный поворот иконки внутри (смотрит вниз) */
-        #scroll-dragon-head i { transform: rotate(180deg); }
+        /* ПРАВЫЙ ДРАКОН: Никаких поворотов, голова вверх, смотрит влево (стандарт иконки) */
+        #scroll-dragon-head i { transform: none; }
 
         /* === ЛЕВЫЙ ДРАКОН (снизу вверх) === */
         #scroll-dragon-track-left { position: fixed; top: 5vh; left: 20px; height: 90vh; width: 4px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; z-index: 50; }
         #scroll-dragon-fire-left { position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: linear-gradient(to top, transparent, #dc2626, #f59e0b); box-shadow: 0 0 15px #dc2626; }
         
-        /* Контейнер головы левого дракона */
         #scroll-dragon-head-left {
             position: absolute; left: 50%; transform: translateX(-50%);
             width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
             color: #f59e0b; font-size: 24px; filter: drop-shadow(0 0 12px #dc2626); z-index: 51;
         }
-        /* Статичный поворот иконки (тоже смотрит вниз, но летит вверх) */
-        /* Используем rotate(180deg), чтобы он был перевернут "top-down" */
-        #scroll-dragon-head-left i { transform: rotate(180deg); }
+        /* ЛЕВЫЙ ДРАКОН: scaleX(-1) чтобы зеркально отразить по горизонтали (смотреть вправо), но ГОЛОВА ВВЕРХ */
+        #scroll-dragon-head-left i { transform: scaleX(-1); }
 
         .head-particle { position: absolute; background: #fbbf24; border-radius: 50%; opacity: 0; pointer-events: none; }
 
@@ -89,22 +85,20 @@
     <canvas id="embers-canvas"></canvas>
     <div id="dragon-container"></div>
 
-    <!-- Right Dragon (Down) -->
+    <!-- Right Dragon -->
     <div id="scroll-dragon-track" class="hidden xl:block">
         <div id="scroll-dragon-fire"></div>
         <div id="scroll-dragon-head">
-            <!-- Обертка для анимации пульсации -->
             <div class="dragon-pulse-wrapper">
                 <i class="fas fa-dragon"></i>
             </div>
         </div>
     </div>
 
-    <!-- Left Dragon (Up) -->
+    <!-- Left Dragon -->
     <div id="scroll-dragon-track-left" class="hidden xl:block">
         <div id="scroll-dragon-fire-left"></div>
         <div id="scroll-dragon-head-left">
-            <!-- Обертка для анимации пульсации -->
             <div class="dragon-pulse-wrapper">
                 <i class="fas fa-dragon"></i>
             </div>
@@ -305,7 +299,7 @@
             }
         });
 
-        // Pulsing Animation (Applied to the Wrapper Class to prevent spin!)
+        // Pulsing Animation
         gsap.to(".dragon-pulse-wrapper", { 
             scale: 1.25, 
             duration: 0.8, 
