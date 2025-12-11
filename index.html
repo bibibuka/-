@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме | Василиса - Project Manager</title>
+    <title>Резюме | Василиса Борисова</title>
     
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -53,7 +53,7 @@
             width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
             color: #ef4444; font-size: 24px; filter: drop-shadow(0 0 10px #f59e0b); z-index: 51;
         }
-        /* ПРАВЫЙ ДРАКОН: Никаких поворотов, голова вверх, смотрит влево (стандарт иконки) */
+        /* ПРАВЫЙ: Голова вверх */
         #scroll-dragon-head i { transform: none; }
 
         /* === ЛЕВЫЙ ДРАКОН (снизу вверх) === */
@@ -65,10 +65,44 @@
             width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
             color: #f59e0b; font-size: 24px; filter: drop-shadow(0 0 12px #dc2626); z-index: 51;
         }
-        /* ЛЕВЫЙ ДРАКОН: scaleX(-1) чтобы зеркально отразить по горизонтали (смотреть вправо), но ГОЛОВА ВВЕРХ */
+        /* ЛЕВЫЙ: Голова вверх, зеркально отражен */
         #scroll-dragon-head-left i { transform: scaleX(-1); }
 
         .head-particle { position: absolute; background: #fbbf24; border-radius: 50%; opacity: 0; pointer-events: none; }
+        
+        /* Стили для тегов навыков */
+        .skill-tag {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            margin: 0.25rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+        .skill-tag-hard {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            color: #fca5a5;
+        }
+        .skill-tag-hard:hover {
+            background: rgba(220, 38, 38, 0.2);
+            border-color: #ef4444;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .skill-tag-soft {
+            background: rgba(217, 119, 6, 0.1);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            color: #fdba74;
+        }
+        .skill-tag-soft:hover {
+            background: rgba(217, 119, 6, 0.2);
+            border-color: #f59e0b;
+            color: white;
+            transform: translateY(-2px);
+        }
 
         @media print {
             body { background: white !important; color: #1a1a1a !important; overflow: visible; }
@@ -77,6 +111,7 @@
             .text-white { color: #000 !important; } .text-zinc-300, .text-zinc-400 { color: #333 !important; }
             h1, h2, h3, h4 { color: #000 !important; text-shadow: none !important; }
             main { max-width: 100% !important; margin: 0 !important; }
+            .skill-tag { border: 1px solid #ccc !important; color: black !important; background: transparent !important; }
         }
     </style>
 </head>
@@ -111,21 +146,17 @@
             <!-- Header -->
             <header class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-zinc-800 pb-8 mb-8 section-reveal print:border-gray-300">
                 <div class="relative group">
-                    <h1 class="text-5xl font-extrabold tracking-tight text-white mb-2 font-cinzel text-glow cursor-default print:text-black">
-                        ВАСИЛИСА
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-2 font-cinzel text-glow cursor-default print:text-black">
+                        ВАСИЛИСА БОРИСОВА
                     </h1>
                     <h2 class="text-lg font-mono text-red-500 tracking-wide uppercase font-bold print:text-red-700">
                         Junior Project Manager / Координатор
                     </h2>
                 </div>
                 <div class="mt-4 md:mt-0 flex flex-col items-start md:items-end space-y-2 text-sm text-zinc-400 font-mono print:text-black">
-                    <a href="https://t.me/username" target="_blank" class="flex items-center gap-2 hover:text-red-400 transition-colors">
-                        <span>Telegram: @username</span>
+                    <a href="https://t.me/prdaisy" target="_blank" class="flex items-center gap-2 hover:text-red-400 transition-colors">
+                        <span>Telegram: @prdaisy</span>
                         <i class="fab fa-telegram text-zinc-500 print:text-black"></i>
-                    </a>
-                    <a href="mailto:email@example.com" class="flex items-center gap-2 hover:text-red-400 transition-colors">
-                        <span>email@example.com</span>
-                        <i class="fas fa-envelope text-zinc-500 print:text-black"></i>
                     </a>
                     <div class="flex items-center gap-2">
                         <span>Удаленно / Гибрид</span>
@@ -135,110 +166,149 @@
             </header>
 
             <div class="space-y-12 max-w-3xl mx-auto">
+                
+                <!-- Обо мне -->
                 <section class="section-reveal">
                     <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2 font-cinzel">
                         <span class="text-red-600 text-glow"><i class="fas fa-fire"></i></span> Обо мне
                     </h3>
-                    <p class="text-zinc-300 leading-relaxed text-sm border-l-2 border-zinc-800 pl-4 print:border-red-600">
-                        Координатор с системным мышлением и навыками антикризисного управления. Специализируюсь на превращении хаоса в структуру: декомпозиция задач, контроль сроков и организация работы команд.
-                        <br><br>
-                        Обладаю бэкграундом в риск-менеджменте (анализ ситуаций, быстрое принятие решений). Ищу позицию Junior PM или координатора проектов в IT, где ценятся ответственность, прямая коммуникация и способность доводить задачи до результата.
-                    </p>
+                    <div class="text-zinc-300 leading-relaxed text-sm border-l-2 border-zinc-800 pl-4 print:border-red-600 space-y-3">
+                        <p>
+                            Я учусь на инженера по охране лесов. Для многих это звучит как романтика, но на самом деле это суровая дисциплина про управление рисками, прогнозирование катастроф и умение действовать, когда вокруг полыхает. Это лучшая профессиональная метафора моего подхода к делам: я не просто наблюдаю за процессами — я выстраиваю «минерализованные полосы», чтобы хаос не перекинулся на здоровые части проекта.
+                        </p>
+                        <p>
+                            Но мой главный университет — это не аудитории, а жизнь. Сложные семейные обстоятельства заставили меня повзрослеть раньше сверстников. Я прошла школу, где «не могу», «не хочу» или «лапки» — это непозволительная роскошь. Этот опыт выковал во мне железный моральный стержень и патологическую обязательность. Я — тот человек, который держит слово не потому, что так написано в договоре, а потому что по-другому просто не умеет.
+                        </p>
+                        <p>
+                            Я не питаю иллюзий, что работа — это всегда праздник. Я знаю, что такое рутина, горящие сроки и человеческий фактор. Но именно в таких условиях я раскрываюсь лучше всего. Моя суперсила — сохранять холодную голову и структуру, когда остальные поддаются эмоциям. Ищу команду, которой нужен не просто исполнитель функций, а надежный, морально сильный союзник, готовый играть в долгую и отвечать за результат.
+                        </p>
+                    </div>
                 </section>
 
+                <!-- Опыт -->
                 <section class="section-reveal">
                     <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2 font-cinzel">
                         <span class="text-red-600 text-glow"><i class="fas fa-briefcase"></i></span> Опыт и Кейсы
                     </h3>
+                    
+                    <!-- Блок 1 -->
                     <div class="mb-8 border-l-accent pl-6 relative transition-all duration-300 hover:translate-x-1 print:border-l-2 print:border-gray-400">
                         <div class="flex flex-col md:flex-row justify-between items-baseline mb-1">
-                            <h4 class="font-bold text-white text-lg">Координатор проектных групп</h4>
-                            <span class="text-xs text-zinc-500 font-mono">2021 — Наст. время</span>
+                            <h4 class="font-bold text-white text-lg">Личный ассистент / Координатор</h4>
+                            <span class="text-xs text-zinc-500 font-mono">2024 — 2025</span>
                         </div>
-                        <p class="text-zinc-400 text-sm mb-3 italic">Образовательные и волонтерские проекты</p>
+                        <p class="text-zinc-400 text-sm mb-3 italic">Фриланс / Проектная деятельность</p>
                         <ul class="list-disc list-outside ml-4 text-zinc-300 text-sm space-y-2 marker:text-red-600">
-                            <li><strong>Управление командой:</strong> Организация работы групп (5-15 человек), распределение ролей по сильным сторонам.</li>
-                            <li><strong>Декомпозиция задач:</strong> Превращение «сделать проект» в пошаговый Roadmap с контрольными точками.</li>
-                            <li><strong>Контроль качества:</strong> Мониторинг дедлайнов, помощь отстающим, тушение «пожаров».</li>
-                            <li><strong>Документация:</strong> Сбор информации в единую структуру (сводные таблицы, конспекты, презентации).</li>
+                            <li><strong>Укрощение хаоса:</strong> Обработка входящего потока (голосовые, хаотичные созвоны) и превращение их в четкие задачи в Asana/To-Do.</li>
+                            <li><strong>Планирование:</strong> Ведение календаря, контроль таймингов и жесткое напоминание о дедлайнах (чтобы ничего не сгорело).</li>
+                            <li><strong>AI & Контент:</strong> Использование нейросетей (ChatGPT, Sora, Nano Banana) для ускорения рутины. Оформление презентаций в Gamma и монтаж видео в CapCut.</li>
                         </ul>
                     </div>
+
+                    <!-- Блок 2 -->
+                    <div class="mb-8 border-l-accent pl-6 border-l-zinc-700 relative transition-all duration-300 hover:translate-x-1 print:border-l-2 print:border-gray-400">
+                        <div class="flex flex-col md:flex-row justify-between items-baseline mb-1">
+                            <h4 class="font-bold text-white text-lg">Лидер проектных групп</h4>
+                            <span class="text-xs text-zinc-500 font-mono">2024 — Наст. время</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm mb-3 italic">Лесотехнический университет</p>
+                        <ul class="list-disc list-outside ml-4 text-zinc-300 text-sm space-y-2 marker:text-red-600">
+                            <li>Организация работы команды: распределение ролей по сильным сторонам участников.</li>
+                            <li>Антикризисный менеджмент: помощь отстающим, сборка проекта из разрозненных частей в единую структуру.</li>
+                            <li>Сдача проектов «под ключ»: от идеи до защиты.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Блок 3 -->
                     <div class="border-l-accent pl-6 border-l-zinc-700 relative transition-all duration-300 hover:translate-x-1 print:border-l-2 print:border-gray-400">
                         <div class="flex flex-col md:flex-row justify-between items-baseline mb-1">
-                            <h4 class="font-bold text-white text-lg">Ассистент / Помощник руководителя</h4>
-                            <span class="text-xs text-zinc-500 font-mono">Проектная деятельность</span>
+                            <h4 class="font-bold text-white text-lg">HR-менеджер (Стажировка)</h4>
+                            <span class="text-xs text-zinc-500 font-mono">Июнь 2024 — Июль 2024</span>
                         </div>
                         <ul class="list-disc list-outside ml-4 text-zinc-300 text-sm space-y-2 mt-3 marker:text-red-600">
-                            <li>Обработка входящей информации (созвоны, голосовые) и перевод в ТЗ или To-Do list.</li>
-                            <li>Ведение календаря и жесткий контроль таймингов.</li>
-                            <li>Подготовка отчетности и визуализация данных для презентаций.</li>
+                            <li>Первичный скрининг резюме и коммуникация с кандидатами.</li>
+                            <li>Организация и ведение базы данных.</li>
                         </ul>
                     </div>
                 </section>
 
+                <!-- Образование -->
                 <section class="section-reveal">
                     <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2 font-cinzel">
                         <span class="text-red-600 text-glow"><i class="fas fa-graduation-cap"></i></span> Образование
                     </h3>
                     <div class="text-sm bg-zinc-900/50 p-4 rounded border border-zinc-800/50 print:bg-white print:border-gray-300">
-                        <p class="font-bold text-white">Высшее образование (в процессе)</p>
-                        <p class="text-zinc-400">Направление: Техносферная безопасность / Управление рисками</p>
+                        <p class="font-bold text-white">Лесотехнический университет (В процессе)</p>
+                        <p class="text-zinc-400">Направление: Техносферная безопасность / Охрана лесов</p>
+                        <p class="text-zinc-500 mt-2 text-xs border-t border-zinc-800 pt-2 print:border-gray-300"><i class="fas fa-check text-red-500 mr-1"></i> Навыки: оценка рисков, работа в неопределенности, оперативное планирование.</p>
                     </div>
                 </section>
 
+                <!-- Комплексные Навыки -->
                 <section class="section-reveal">
                     <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2 font-cinzel">
-                        <span class="text-red-600 text-glow"><i class="fas fa-tools"></i></span> Навыки и Инструменты
+                        <span class="text-red-600 text-glow"><i class="fas fa-layer-group"></i></span> Профессиональный арсенал
                     </h3>
+                    
                     <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                        <!-- HARD SKILLS -->
                         <div>
                             <h4 class="text-sm font-bold text-amber-600 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2 font-mono print:border-gray-300">Hard Skills</h4>
-                            <ul class="space-y-3 text-sm text-zinc-300">
-                                <li class="flex justify-between group"><span class="group-hover:text-white transition-colors">Управление задачами</span><div class="w-16 h-1.5 bg-zinc-800 rounded-full mt-2 overflow-hidden print:bg-gray-300"><div class="h-full bg-red-600 w-[90%] print:print-color-adjust-exact"></div></div></li>
-                                <li class="flex justify-between group"><span class="group-hover:text-white transition-colors">Техническая документация</span><div class="w-16 h-1.5 bg-zinc-800 rounded-full mt-2 overflow-hidden print:bg-gray-300"><div class="h-full bg-red-600 w-[70%] print:print-color-adjust-exact"></div></div></li>
-                                <li class="flex justify-between group"><span class="group-hover:text-white transition-colors">Google Docs/Sheets</span><div class="w-16 h-1.5 bg-zinc-800 rounded-full mt-2 overflow-hidden print:bg-gray-300"><div class="h-full bg-red-600 w-[95%] print:print-color-adjust-exact"></div></div></li>
-                            </ul>
+                            <div class="flex flex-wrap -m-1">
+                                <span class="skill-tag skill-tag-hard">Декомпозиция задач</span>
+                                <span class="skill-tag skill-tag-hard">Календарное планирование</span>
+                                <span class="skill-tag skill-tag-hard">Google Workspace Expert</span>
+                                <span class="skill-tag skill-tag-hard">Task Management</span>
+                                <span class="skill-tag skill-tag-hard">Промпт-инжиниринг</span>
+                                <span class="skill-tag skill-tag-hard">Фасилитация встреч</span>
+                                <span class="skill-tag skill-tag-hard">Технический ресерч</span>
+                                <span class="skill-tag skill-tag-hard">Подготовка ТЗ</span>
+                                <span class="skill-tag skill-tag-hard">Визуализация данных</span>
+                                <span class="skill-tag skill-tag-hard">Создание презентаций</span>
+                                <span class="skill-tag skill-tag-hard">Базовый видеомонтаж</span>
+                                <span class="skill-tag skill-tag-hard">Транскрибация и саммари</span>
+                                <span class="skill-tag skill-tag-hard">AI (Nano Banana, Midjourney)</span>
+                                <span class="skill-tag skill-tag-hard">Admin Zoom/Meet</span>
+                                <span class="skill-tag skill-tag-hard">Контроль подрядчиков</span>
+                                <span class="skill-tag skill-tag-hard">Базовая аналитика</span>
+                                <span class="skill-tag skill-tag-hard">Ведение базы знаний</span>
+                                <span class="skill-tag skill-tag-hard">Оформление отчетности</span>
+                            </div>
                         </div>
+
+                        <!-- SOFT SKILLS -->
                         <div>
-                            <h4 class="text-sm font-bold text-amber-600 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2 font-mono print:border-gray-300">Инструменты</h4>
-                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-xs text-zinc-400">
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">Trello</div>
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">Notion</div>
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">Telegram</div>
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">Zoom</div>
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">MS Office</div>
-                                <div class="p-2 bg-zinc-900 rounded border border-transparent cursor-default print:border-gray-300">Google</div>
+                            <h4 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2 font-mono print:border-gray-300">Soft Skills & Характер</h4>
+                            <div class="flex flex-wrap -m-1">
+                                <span class="skill-tag skill-tag-soft">Патологическая ответственность</span>
+                                <span class="skill-tag skill-tag-soft">Антикризисное мышление</span>
+                                <span class="skill-tag skill-tag-soft">Прямая коммуникация</span>
+                                <span class="skill-tag skill-tag-soft">Системность</span>
+                                <span class="skill-tag skill-tag-soft">Стрессоустойчивость</span>
+                                <span class="skill-tag skill-tag-soft">Усидчивость</span>
+                                <span class="skill-tag skill-tag-soft">Адаптивность</span>
+                                <span class="skill-tag skill-tag-soft">Эмоциональный интеллект</span>
+                                <span class="skill-tag skill-tag-soft">Умение говорить «Нет»</span>
+                                <span class="skill-tag skill-tag-soft">Соблюдение субординации</span>
+                                <span class="skill-tag skill-tag-soft">Проактивность</span>
+                                <span class="skill-tag skill-tag-soft">Быстрая обучаемость</span>
+                                <span class="skill-tag skill-tag-soft">Навык «Дожимать»</span>
+                                <span class="skill-tag skill-tag-soft">Честность</span>
+                                <span class="skill-tag skill-tag-soft">Клиентоориентированность</span>
+                                <span class="skill-tag skill-tag-soft">Самодисциплина</span>
+                                <span class="skill-tag skill-tag-soft">Конфликтология</span>
+                                <span class="skill-tag skill-tag-soft">Лидерство</span>
+                                <span class="skill-tag skill-tag-soft">Внимание к деталям</span>
+                                <span class="skill-tag skill-tag-soft">Чувство юмора</span>
                             </div>
                         </div>
                     </div>
                 </section>
-                
-                <section class="section-reveal">
-                     <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2 font-cinzel">
-                        <span class="text-red-600 text-glow"><i class="fas fa-users"></i></span> Личность и Подход
-                    </h3>
-                    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                        <div>
-                            <h4 class="text-sm font-bold text-amber-600 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2 font-mono print:border-gray-300">Soft Skills</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-zinc-900 rounded text-xs text-zinc-300 border border-zinc-700 print:border-gray-300">Лидерство</span>
-                                <span class="px-2 py-1 bg-zinc-900 rounded text-xs text-zinc-300 border border-zinc-700 print:border-gray-300">Стрессоустойчивость</span>
-                                <span class="px-2 py-1 bg-zinc-900 rounded text-xs text-zinc-300 border border-zinc-700 print:border-gray-300">Прямая коммуникация</span>
-                                <span class="px-2 py-1 bg-zinc-900 rounded text-xs text-zinc-300 border border-zinc-700 print:border-gray-300">Системность</span>
-                            </div>
-                        </div>
-                         <div>
-                            <h4 class="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2 font-mono print:border-gray-300">Вайб</h4>
-                            <p class="text-sm text-zinc-400 italic leading-relaxed font-mono border-l border-zinc-800 pl-4 print:border-gray-300">
-                                "Не терплю пофигизм и слив ответственности. Если взялась за дело — делаю его до конца."
-                            </p>
-                        </div>
-                    </div>
-                </section>
+
             </div>
            
             <div class="mt-12 pt-6 border-t border-zinc-800 flex justify-between items-center text-xs text-zinc-600 font-mono print:hidden">
-                <div>© 2025 Vasilisa.</div>
+                <div>© 2025 Vasilisa Borisova.</div>
                 <div>Статус: Открыта к предложениям</div>
             </div>
         </div>
