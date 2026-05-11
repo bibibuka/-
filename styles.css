@@ -488,7 +488,7 @@ section { position: relative; }
 }
 
 .advantage, .professions, .path, .payments, .media-section, .cta {
-  padding: 56px 16px;
+  padding: 28px 16px;
   width: min(1200px, 100%);
   margin: 0 auto;
 }
@@ -541,6 +541,7 @@ section { position: relative; }
   grid-template-columns: 1fr;
   gap: 12px;
 }
+.pay-grid--totals { margin-top: 14px; }
 .pay-card {
   padding: 22px;
   background: var(--paper);
@@ -549,6 +550,9 @@ section { position: relative; }
   border-radius: var(--radius-md);
   display: grid;
   gap: 8px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .pay-card--accent {
   background: linear-gradient(180deg, #ffffff, var(--accent-soft));
@@ -563,11 +567,13 @@ section { position: relative; }
 }
 .pay-card strong {
   font-family: "PT Serif", Georgia, serif;
-  font-size: clamp(28px, 5vw, 40px);
+  font-size: clamp(26px, 4.4vw, 38px);
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.01em;
-  line-height: 1;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .pay-card--accent strong { color: var(--accent-dark); }
 .pay-card p { margin: 0; color: var(--ink-dim); font-size: 17px; }
@@ -1089,10 +1095,11 @@ section { position: relative; }
 /* === BREAKPOINTS === */
 @media (min-width: 640px) {
   .hero { padding: 40px 24px 64px; }
-  .advantage, .professions, .path, .payments, .media-section, .cta { padding: 72px 24px; }
+  .advantage, .professions, .path, .payments, .media-section, .cta { padding: 36px 24px; }
 
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pay-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pay-grid--totals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .prof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .prof-cta { grid-template-columns: 1fr auto; }
@@ -1124,10 +1131,11 @@ section { position: relative; }
     align-items: center;
   }
 
-  .advantage, .professions, .path, .payments, .media-section, .cta { padding: 96px 40px; }
+  .advantage, .professions, .path, .payments, .media-section, .cta { padding: 48px 40px; }
 
   .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .pay-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .pay-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pay-grid--totals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .prof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   .path-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
