@@ -1,143 +1,81 @@
-const storagePrefix = "steel-frontier-v2:";
-const toast = document.querySelector("[data-toast]");
-let toastTimer;
+// ============================================================
+//  Контракт · Санкт-Петербург — поведение лендинга
+// ============================================================
 
-const showToast = (message) => {
-  if (!toast) return;
-  toast.textContent = message;
-  toast.classList.add("is-visible");
-  window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2400);
-};
-
-const initIcons = () => {
-  if (window.lucide) {
-    window.lucide.createIcons();
-  }
-};
-
+// --- Шапка: тень при прокрутке ---
 const initHeader = () => {
   const header = document.querySelector("[data-header]");
   const nav = document.querySelector("[data-nav]");
-  const navToggle = document.querySelector("[data-nav-toggle]");
+  const toggle = document.querySelector("[data-nav-toggle]");
+  if (!header) return;
 
-  const syncHeader = () => {
-    header?.classList.toggle("is-scrolled", window.scrollY > 16);
-  };
+  const sync = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
+  sync();
+  window.addEventListener("scroll", sync, { passive: true });
 
-  syncHeader();
-  window.addEventListener("scroll", syncHeader, { passive: true });
-
-  navToggle?.addEventListener("click", () => {
-    const isOpen = nav?.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  // Мобильное меню
+  toggle?.addEventListener("click", () => {
+    const open = nav?.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(Boolean(open)));
   });
 
-  nav?.querySelectorAll("a, button").forEach((item) => {
-    item.addEventListener("click", () => {
+  // Закрыть меню после клика по ссылке
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       nav.classList.remove("is-open");
-      navToggle?.setAttribute("aria-expanded", "false");
+      toggle?.setAttribute("aria-expanded", "false");
     });
+  });
+
+  // Закрыть меню по клику вне его
+  document.addEventListener("click", (e) => {
+    if (!nav?.classList.contains("is-open")) return;
+    if (nav.contains(e.target) || toggle?.contains(e.target)) return;
+    nav.classList.remove("is-open");
+    toggle?.setAttribute("aria-expanded", "false");
   });
 };
 
-const initUploads = () => {
-  document.querySelectorAll("[data-upload]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = button.getAttribute("data-upload");
-      document.querySelector(`[data-file-input="${target}"]`)?.click();
-    });
-  });
-
-  document.querySelectorAll("[data-file-input]").forEach((input) => {
-    input.addEventListener("change", () => {
-      const file = input.files?.[0];
-      const target = input.getAttribute("data-file-input");
-      const preview = document.querySelector(`[data-preview="${target}"]`);
-
-      if (!file || !preview) return;
-
-      const url = URL.createObjectURL(file);
-      const isVideo = preview.tagName.toLowerCase() === "video";
-
-      if (isVideo) {
-        preview.src = url;
-        preview.load();
-        preview.play().catch(() => undefined);
-      } else {
-        preview.src = url;
-      }
-
-      showToast(file.type.startsWith("video") ? "Видео загружено" : "Фото загружено");
-    });
-  });
-};
-
-const initEditableText = () => {
-  const editables = [...document.querySelectorAll("[data-editable]")];
-  const originalValues = new Map();
-
-  editables.forEach((element) => {
-    const key = `${storagePrefix}${element.getAttribute("data-editable")}`;
-    originalValues.set(key, element.innerHTML);
-
-    const saved = localStorage.getItem(key);
-    if (saved) {
-      element.innerHTML = saved;
-    }
-
-    element.addEventListener("input", () => {
-      localStorage.setItem(key, element.innerHTML);
-    });
-  });
-
-  document.querySelector("[data-clear-text]")?.addEventListener("click", () => {
-    editables.forEach((element) => {
-      const key = `${storagePrefix}${element.getAttribute("data-editable")}`;
-      const original = originalValues.get(key);
-      if (original) {
-        element.innerHTML = original;
-      }
-      localStorage.removeItem(key);
-    });
-    initIcons();
-    showToast("Текст сброшен");
-  });
-
-  document.querySelector("[data-copy-brief]")?.addEventListener("click", async () => {
-    const brief = document.querySelector("#brief");
-    const text = brief?.innerText.trim();
-    if (!text) return;
-
-    try {
-      await navigator.clipboard.writeText(text);
-      showToast("Текст скопирован");
-    } catch {
-      showToast("Не удалось скопировать автоматически");
-    }
-  });
-};
-
+// --- Появление блоков при прокрутке ---
 const initReveal = () => {
-  const candidates = document.querySelectorAll(".bento-card, .card, .pay-card, .path-list li, .prof, .cta-inner, .hero-card");
-  candidates.forEach((element) => element.classList.add("reveal"));
+  const items = document.querySelectorAll(
+    ".card, .pay-card, .prof, .path-list li, .specialty-cards li, .hero-card, .mc-card, .re-card, .faq-item, .trust-item, .nuc-card, .nuc-panel"
+  );
+  if (!("IntersectionObserver" in window) || !items.length) {
+    items.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      }
+  items.forEach((el) => el.classList.add("reveal"));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  items.forEach((el) => observer.observe(el));
+};
+
+// --- FAQ: открыт только один пункт за раз ---
+const initFaq = () => {
+  const items = document.querySelectorAll("[data-faq] .faq-item");
+  items.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      items.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
     });
-  }, { threshold: 0.16 });
-
-  candidates.forEach((element) => observer.observe(element));
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  initIcons();
   initHeader();
-  initUploads();
-  initEditableText();
   initReveal();
+  initFaq();
 });

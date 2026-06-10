@@ -3,405 +3,649 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f4efe4">
-  <meta name="description" content="Контракт через Санкт-Петербург: подберем направление под вашу специальность, объясним выплаты и сопроводим на каждом этапе оформления.">
-  <title>Контракт через Санкт-Петербург - подбор специальности и сопровождение кандидата</title>
+  <meta name="theme-color" content="#0e1b2e">
+  <meta name="description" content="Служба по контракту через Санкт-Петербург. Идёшь по своей специальности, можно в тыл с полными льготами. Сопровождаем от первого звонка до подписания. Выплата до 4 500 000 ₽.">
+  <title>Контракт через Санкт-Петербург — по своей специальности, в тыл, выплата до 4 500 000 ₽</title>
+
+  <meta property="og:title" content="Контракт через Санкт-Петербург — по специальности, не в штурм">
+  <meta property="og:description" content="Идёшь по своей профессии, можно в тыл с полными льготами. Перевезём из твоего города в СПб — выплата вырастает с ~800 000 ₽ до 4 500 000 ₽.">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,700;1,700&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ===== HEADER ===== -->
   <header class="site-header" data-header>
-    <a class="brand" href="#top" aria-label="Подбор специальности для службы по контракту через Санкт-Петербург">
-      <span class="brand-mark" aria-hidden="true">
-        <span class="flag"><i></i><i></i><i></i></span>
-      </span>
+    <a class="brand" href="#top" aria-label="Контракт через Санкт-Петербург — на главную">
+      <span class="brand-mark" aria-hidden="true"><span class="flag"><i></i><i></i><i></i></span></span>
       <span class="brand-text">
         <b>Контракт · Санкт-Петербург</b>
-        <span>Вооружённые силы РФ</span>
+        <span>Служба по контракту · ВС РФ</span>
       </span>
     </a>
 
-    <nav class="nav-links" data-nav>
-      <a href="#advantage">Чем отличаемся</a>
+    <nav class="nav-links" data-nav aria-label="Основное меню">
+      <a href="#specialty">Контракт СВО</a>
+      <a href="#money">Деньги</a>
+      <a href="#nuclear">Ядерные силы</a>
       <a href="#professions">Профессии</a>
       <a href="#path">Как идём</a>
-      <a href="#payments">Деньги</a>
-      <a href="#videos">Видео</a>
-      <a href="#cta">Связаться</a>
+      <a href="#faq">Вопросы</a>
     </nav>
 
-    <a class="phone-link" href="#cta">
-      <span>Подобрать</span>
+    <a class="phone-link" href="tel:117">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>117</span>
     </a>
 
-    <button class="icon-button nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-nav-toggle>
+    <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-nav-toggle>
       <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
     </button>
   </header>
 
   <main id="top">
-    <!-- HERO -->
-    <section class="hero" aria-label="Главный экран">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <span class="kicker">По-человечески. Без давления и обмана.</span>
 
-          <h1 contenteditable="true" data-editable="hero-title">
-            Контракт <em>по-нормальному</em>:<br>
-            с уважением к тебе как к человеку
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Главный экран">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="kicker kicker-on-dark">
+            <span class="pulse"></span>
+            Набор открыт · Санкт-Петербург
+          </span>
+
+          <h1>
+            Иди на контракт <em>по своей профессии</em><br>
+            — а не в штурм
           </h1>
 
-          <p class="hero-sub" contenteditable="true" data-editable="hero-copy">
-            Мы не «обрабатываем» людей. Поговорим спокойно, подберём дело под твои руки, всё объясним простыми словами. Никакого давления и сказок про миллионы. Что обещали — то и будет.
+          <p class="hero-sub">
+            Помогаем устроиться по специальности, при возможности — <b>в тыл, с полными льготами участника СВО</b>. Перевезём из твоего города в Санкт-Петербург, и выплата вырастает с <b>~800 000 ₽</b> до <b>4 500 000 ₽</b>. Всё объясним простыми словами, без давления и сказок.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#cta">
-              <span>Поговорить с человеком</span>
+            <a class="btn btn-primary btn-lg" href="tel:117">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Позвонить сейчас</span>
             </a>
-            <a class="btn btn-ghost" href="#advantage">
-              <span>Чем мы отличаемся</span>
+            <a class="btn btn-ghost-light btn-lg" href="#money">
+              <span>Узнать свою выплату</span>
             </a>
           </div>
 
           <ul class="hero-points">
-            <li><span>Относимся по-человечески. Ты — мужик, а не «галочка в отчёте»</span></li>
-            <li><span>Говорим как есть: суммы, сроки, документы — без тумана</span></li>
-            <li><span>На связи и до, и после. Не пропадём, когда подпишешь</span></li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Идёшь по своей специальности — водитель, связист, медик и&nbsp;др.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>При возможности — <b>в тыл</b>, и всё равно полные льготы СВО</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Рядом живой человек от первого звонка до подписания</span>
+            </li>
           </ul>
         </div>
 
-        <aside class="hero-card" aria-label="Сравнение выплат">
-          <div class="hero-card-head">
-            <span class="kicker kicker-light">Деньги без сказок · данные на 04.05.2026</span>
-            <h2>Не одна жирная цифра, а из чего она сложена</h2>
+        <!-- Карточка-сравнение денег -->
+        <aside class="hero-card" aria-label="Сравнение выплаты">
+          <div class="hero-card-top">
+            <span class="hero-card-kicker">Разовая выплата при подписании</span>
+            <h2>Та же служба — но&nbsp;деньги разные</h2>
           </div>
 
-          <div class="compare">
-            <div class="compare-row compare-spb">
-              <div class="compare-label">
-                <span class="dot dot-accent"></span>
-                <div>
-                  <b>Базовая официальная формула</b>
-                  <small>3 500 000 ₽ из бюджета Санкт-Петербурга + 400 000 ₽ федерально</small>
-                </div>
+          <div class="vs">
+            <div class="vs-row vs-low">
+              <div class="vs-head">
+                <span>В твоём городе</span>
+                <b class="num">~800 000 ₽</b>
               </div>
-              <div class="compare-value"><strong>3&nbsp;900&nbsp;000&nbsp;₽</strong></div>
-              <div class="bar"><span style="width: 87%"></span></div>
+              <div class="vs-bar"><span style="width:18%"></span></div>
             </div>
 
-            <div class="compare-row compare-region">
-              <div class="compare-label">
-                <span class="dot"></span>
-                <div>
-                  <b>Дополнительно при наличии основания</b>
-                  <small>+ до 600 000 ₽ социальной выплаты при трудоустройстве на предложенное предприятие Санкт-Петербурга</small>
-                </div>
-              </div>
-              <div class="compare-value">до&nbsp;<strong>4&nbsp;500&nbsp;000&nbsp;₽</strong></div>
-              <div class="bar"><span style="width: 100%; background: var(--ink-mute)"></span></div>
+            <div class="vs-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              <small>через нас, в Санкт-Петербурге</small>
             </div>
 
-            <p class="compare-note">
-              Покажем, из чего складывается сумма и что нужно, чтобы получить дополнительную выплату. Цифры должны быть понятны до подписания, а не после.
-            </p>
+            <div class="vs-row vs-high">
+              <div class="vs-head">
+                <span>Через нас в Санкт-Петербурге</span>
+                <b class="num">до 4 500 000 ₽</b>
+              </div>
+              <div class="vs-bar"><span style="width:100%"></span></div>
+            </div>
+          </div>
+
+          <div class="hero-card-foot">
+            <span class="diff">разница до <b>+3 700 000 ₽</b></span>
+            <small>Суммы по регионам отличаются. Точные цифры по твоему случаю скажем по телефону.</small>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- ADVANTAGE -->
+    <!-- ===== TRUST BAR ===== -->
+    <section class="trustbar" aria-label="Коротко о нас">
+      <div class="trustbar-inner">
+        <div class="trust-item">
+          <b>По специальности</b>
+          <span>подбираем под твой опыт и руки</span>
+        </div>
+        <div class="trust-item">
+          <b>Можно в тыл</b>
+          <span>с полными льготами участника СВО</span>
+        </div>
+        <div class="trust-item">
+          <b>Честные цифры</b>
+          <span>что сказали — то и получишь</span>
+        </div>
+        <div class="trust-item">
+          <b>Не бросаем</b>
+          <span>на связи и после подписания</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPECIALTY (главная фишка) ===== -->
+    <section class="specialty" id="specialty" aria-labelledby="specialty-title">
+      <div class="specialty-inner">
+        <div class="specialty-copy">
+          <span class="kicker">Главное отличие</span>
+          <h2 id="specialty-title">Ты идёшь по специальности.<br>Не «куда бросят»</h2>
+          <p>
+            Многие гонят людей сразу в штурм — лишь бы закрыть набор. У нас по-другому. Сначала спросим, кем ты работал, что умеешь, какие права и корочки. А потом подберём место, где твой опыт реально нужен.
+          </p>
+          <p>
+            <b>Если есть возможность — устроим в тыл.</b> Это работа в обеспечении, на технике, по связи, по своей профессии. И при этом ты остаёшься участником СВО со <b>всеми положенными льготами и выплатами</b>. Так делают далеко не все. Мы — делаем.
+          </p>
+
+          <a class="btn btn-primary" href="tel:117">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Спросить про свою профессию</span>
+          </a>
+        </div>
+
+        <ul class="specialty-cards">
+          <li>
+            <span class="sc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="13" rx="2"/></svg>
+            </span>
+            <div>
+              <b>По профессии</b>
+              <p>Руль, ключи, рация, кухня, медицина — где умеешь, туда и подбираем.</p>
+            </div>
+          </li>
+          <li>
+            <span class="sc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+            </span>
+            <div>
+              <b>Можно в тыл</b>
+              <p>Обеспечение и техника в тылу — с полными льготами участника СВО.</p>
+            </div>
+          </li>
+          <li>
+            <span class="sc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div>
+              <b>Все льготы</b>
+              <p>Статус, выплаты и социальные гарантии — как у участника СВО.</p>
+            </div>
+          </li>
+          <li>
+            <span class="sc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div>
+              <b>По-человечески</b>
+              <p>Без давления и обмана. Решение всегда остаётся за тобой.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== MONEY ===== -->
+    <section class="money" id="money" aria-labelledby="money-title">
+      <div class="money-inner">
+        <header class="section-head section-head--light">
+          <span class="kicker kicker-on-dark">Деньги — без сказок</span>
+          <h2 id="money-title">Почему через нас выплата больше</h2>
+          <p>Дело в городе. Санкт-Петербург платит за подписание контракта намного больше, чем большинство регионов. Мы перевозим тебя сюда и оформляем здесь — и ты получаешь городскую выплату.</p>
+        </header>
+
+        <!-- большая разница -->
+        <div class="money-compare">
+          <article class="mc-card mc-low">
+            <span class="mc-label">Если подписать у себя в регионе</span>
+            <b class="mc-num">~800 000 ₽</b>
+            <p>В среднем по регионам. Где-то больше, где-то меньше.</p>
+          </article>
+
+          <div class="mc-plus" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+          <article class="mc-card mc-high">
+            <span class="mc-label">Через нас, в Санкт-Петербурге</span>
+            <b class="mc-num">до 4 500 000 ₽</b>
+            <p>Городская + федеральная + социальная выплаты вместе.</p>
+          </article>
+        </div>
+
+        <!-- из чего складывается -->
+        <h3 class="money-sub">Из чего складывается выплата в Санкт-Петербурге</h3>
+        <div class="pay-grid">
+          <article class="pay-card">
+            <span class="pay-label">Выплата Санкт-Петербурга</span>
+            <strong>3 500 000 ₽</strong>
+            <p>Единовременная выплата из бюджета города при подписании контракта.</p>
+          </article>
+          <article class="pay-card">
+            <span class="pay-label">Федеральная выплата</span>
+            <strong>400 000 ₽</strong>
+            <p>Единовременная федеральная выплата. Идёт отдельно от городской.</p>
+          </article>
+          <article class="pay-card">
+            <span class="pay-label">Социальная выплата</span>
+            <strong>до 600 000 ₽</strong>
+            <p>При выполнении отдельного условия. Заранее проговорим, когда она возможна.</p>
+          </article>
+        </div>
+
+        <!-- итоги по направлениям -->
+        <div class="pay-grid pay-grid--totals">
+          <article class="pay-card pay-card--total pay-card--accent">
+            <span class="pay-label">Беспилотники (БПЛА)</span>
+            <strong>4 500 000 ₽</strong>
+            <p>3 500 000 город + 400 000 федерально + 600 000 социальная. Плюс ежемесячное довольствие <b>от 210 000 ₽</b>.</p>
+          </article>
+          <article class="pay-card pay-card--total">
+            <span class="pay-label">Другие войска</span>
+            <strong>4 100 000 ₽</strong>
+            <p>3 500 000 город + 400 000 федерально + 200 000 из доп. выплат. Плюс ежемесячное довольствие <b>от 210 000 ₽</b>.</p>
+          </article>
+        </div>
+
+        <p class="money-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Суммы — по открытым официальным материалам Санкт-Петербурга на 2026 год. Точный расчёт по твоему случаю сделаем по телефону. Информация справочная, не является публичной офертой.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== NUCLEAR ===== -->
+    <section class="nuclear" id="nuclear" aria-labelledby="nuclear-title">
+      <div class="nuclear-inner">
+        <header class="section-head">
+          <span class="kicker kicker-gold">Отдельное направление</span>
+          <h2 id="nuclear-title">Служба в ядерных силах:<br>работа по профессии, 5/2, в тылу</h2>
+          <p>Спокойная служба в стратегических войсках по твоей специальности. Закрывает срочную службу, даёт полный военный соцпакет — и при этом обычный рабочий график. Это <b>отдельное направление со своими условиями</b>, не путать с контрактом СВО выше.</p>
+        </header>
+
+        <!-- Зарплата по месту + соцпакет -->
+        <div class="nuc-highlight">
+          <div class="nuc-panel nuc-salary">
+            <span class="nuc-h-label">Зарплата зависит от города службы</span>
+            <ul class="nuc-locs">
+              <li>
+                <b>Санкт-Петербург</b>
+                <span>Чёрная речка / Ленобласть</span>
+                <i>от 80 000 ₽/мес</i>
+              </li>
+              <li>
+                <b>Архангельск</b>
+                <span>и севернее</span>
+                <i>от 170 000 ₽/мес</i>
+              </li>
+              <li>
+                <b>Дальше вглубь РФ</b>
+                <span>чем дальше — тем больше</span>
+                <i>выше</i>
+              </li>
+            </ul>
+            <p class="nuc-note">Город и должность выбираешь сам — под профессию и желаемую зарплату.</p>
+          </div>
+
+          <div class="nuc-panel nuc-benefit">
+            <span class="nuc-h-label">Полный соцпакет военного</span>
+            <b class="nuc-big">3 800 000 ₽</b>
+            <span class="nuc-sub">единовременная выплата</span>
+            <ul class="nuc-benefit-list">
+              <li>Пенсия уже после 13 лет службы</li>
+              <li>Военная пенсия — от 70 000 ₽</li>
+              <li>Льготная военная ипотека</li>
+              <li>Оплачиваемый отпуск</li>
+              <li>Госо­беспечение и гарантии</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Карточки-условия -->
+        <div class="nuc-grid">
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 11 2 2 4-4"/></svg>
+            </span>
+            <div>
+              <b>Закрывает срочную службу</b>
+              <p>Засчитывается вместо срочной. Военный билет ты получаешь.</p>
+            </div>
+          </article>
+
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.1-.6-.6-2.1z"/></svg>
+            </span>
+            <div>
+              <b>Работа по твоим умениям</b>
+              <p>Программирование и сборка дронов, финансист, HR, электрик и др. Подбираем под тебя.</p>
+            </div>
+          </article>
+
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+            </span>
+            <div>
+              <b>Жильё и питание</b>
+              <p>Государство оплачивает жильё и продукты питания.</p>
+            </div>
+          </article>
+
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <b>График 5/2</b>
+              <p>Обычный рабочий день, пятидневка. Не казарма, а нормальная работа.</p>
+            </div>
+          </article>
+
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+            </span>
+            <div>
+              <b>Можно доучиться</b>
+              <p>Старшие курсы — точно реально совмещать. Начальные — обсуждаемо.</p>
+            </div>
+          </article>
+
+          <article class="nuc-card">
+            <span class="nuc-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+            </span>
+            <div>
+              <b>Можно завершить службу</b>
+              <p>Дроны — уйти можно после года. Финансист, HR, электрик и т.п. — с окончанием СВО.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="nuc-cta">
+          <a class="btn btn-primary btn-lg" href="tel:117">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Узнать про ядерные силы</span>
+          </a>
+          <p class="nuc-cta-note">Расскажем условия по твоему городу и профессии. Без обязательств.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADVANTAGE ===== -->
     <section class="advantage" id="advantage" aria-labelledby="advantage-title">
       <header class="section-head">
-        <span class="kicker">Чем мы отличаемся</span>
-        <h2 id="advantage-title">Главное отличие — мы тебя уважаем</h2>
-        <p>Другие рекрутеры гонят план: лишь бы подписал. У нас по-другому. Поговорим спокойно, объясним по-нормальному и не будем давить. Ты — взрослый мужик и сам решаешь.</p>
+        <span class="kicker">Почему выбирают нас</span>
+        <h2 id="advantage-title">Мы помогаем по-честному —<br>от желания до выхода на службу</h2>
+        <p>Другие закрывают план: лишь бы подписал и ушёл. Мы ведём человека от первого звонка до службы и остаёмся на связи после. Таких, кто реально доводит до конца — единицы.</p>
       </header>
 
       <div class="cards">
         <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </span>
           <h3>Без давления</h3>
-          <p>Не торопим, не пугаем, не уговариваем. Хочешь подумать — думай. Передумал — тоже нормально. Решение твоё.</p>
+          <p>Не торопим и не пугаем. Хочешь подумать — думай. Передумал — тоже нормально. Решаешь ты.</p>
         </article>
         <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
           <h3>Говорим по-человечески</h3>
-          <p>Без бумажного языка. Объясним простыми словами: что подписываешь, какие выплаты, что и когда делать.</p>
+          <p>Без бумажного языка. Простыми словами: что подписываешь, какие выплаты, что и когда делать.</p>
         </article>
         <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
           <h3>Честные цифры</h3>
-          <p>Не обещаем сказочных миллионов. Покажем, из чего складывается сумма и что реально получишь. Без подвохов.</p>
+          <p>Не обещаем сказочных миллионов. Покажем, из чего складывается сумма и что реально получишь.</p>
         </article>
         <article class="card">
+          <span class="card-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          </span>
           <h3>Не бросаем после подписи</h3>
-          <p>У других — «удачи, дальше сам». У нас — куратор остаётся на связи. Возникнут вопросы по документам, выплатам, семье — отвечаем.</p>
+          <p>У других — «дальше сам». У нас куратор остаётся на связи: вопросы по документам, выплатам, семье — отвечаем.</p>
         </article>
       </div>
     </section>
 
-    <!-- PROFESSIONS -->
+    <!-- ===== PROFESSIONS ===== -->
     <section class="professions" id="professions" aria-labelledby="professions-title">
-      <header class="section-head align-left">
+      <header class="section-head">
         <span class="kicker">Под твои руки</span>
         <h2 id="professions-title">Подберём дело по тому,<br>что ты уже умеешь</h2>
-        <p>Не запихнём «куда возьмут». Сначала спросим, чем занимался, что в руках держал, какие права. Потом подберём, где твой опыт реально нужен.</p>
+        <p>Суммы ниже — ежемесячное довольствие по официальной странице Санкт-Петербурга. Конкретная должность зависит от опыта, подготовки и результатов отбора.</p>
       </header>
 
       <div class="prof-grid">
-        <article class="prof"><h3>Водители</h3><p>Категории B/C/D/E. На официальной странице СПб указана выплата водителю от 216 000 ₽ в месяц.</p></article>
-        <article class="prof"><h3>Связисты</h3><p>Старший телефонист — от 224 000 ₽, начальник радиостанции командно-штабной машины — от 232 000 ₽ в месяц.</p></article>
-        <article class="prof"><h3>Медики</h3><p>Фельдшеры, санинструкторы, врачи. Актуальные позиции и порядок назначения уточняются при обращении.</p></article>
-        <article class="prof"><h3>Повара</h3><p>Полевые кухни и обеспечение подразделений. На официальной странице СПб: повар от 211 000 ₽ в месяц.</p></article>
-        <article class="prof"><h3>Механики</h3><p>Технический профиль и опыт ремонта техники учитываются при подборе варианта службы.</p></article>
-        <article class="prof"><h3>Электрики</h3><p>Электрооборудование и генераторы. На официальной странице СПб: старший водитель-электрик от 222 000 ₽ в месяц.</p></article>
-        <article class="prof"><h3>Операторы БПЛА</h3><p>Направление зависит от текущего набора, подготовки кандидата и результатов отбора.</p></article>
-        <article class="prof"><h3>Стрелки и снайперы</h3><p>По официальной странице СПб: стрелок от 210 000 ₽ в месяц. Конкретные условия зависят от должности.</p></article>
-        <article class="prof"><h3>Инженеры и IT</h3><p>Штабные и технические направления. Например, инструктор штаба — от 234 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Водители</h3><p>Категории B/C/D/E. По официальной странице СПб — от 216 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Связисты</h3><p>Старший телефонист — от 224 000 ₽, начальник радиостанции — от 232 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Медики</h3><p>Фельдшеры, санинструкторы, врачи. Позиции и порядок уточняются при обращении.</p></article>
+        <article class="prof"><h3>Повара</h3><p>Полевые кухни и обеспечение подразделений. По СПб — от 211 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Механики</h3><p>Ремонт и обслуживание техники. Опыт учитывается при подборе варианта службы.</p></article>
+        <article class="prof"><h3>Электрики</h3><p>Электрооборудование и генераторы. Старший водитель-электрик — от 222 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Операторы БПЛА</h3><p>Беспилотные системы. Направление зависит от набора и результатов отбора.</p></article>
+        <article class="prof"><h3>Стрелки и снайперы</h3><p>По официальной странице СПб — стрелок от 210 000 ₽ в месяц.</p></article>
+        <article class="prof"><h3>Инженеры и IT</h3><p>Штабные и технические направления. Инструктор штаба — от 234 000 ₽ в месяц.</p></article>
       </div>
 
       <div class="prof-cta">
-        <p><b>Не нашёл свою профессию?</b> Это не «отказ». Расскажи, чем работал — подскажем, куда подойдёт.</p>
-        <a class="btn btn-primary" href="#cta"><span>Спросить про свою работу</span></a>
+        <p><b>Не нашёл свою профессию?</b> Это не «отказ». Расскажи, кем работал — подскажем, куда подойдёшь.</p>
+        <a class="btn btn-primary" href="tel:117"><span>Спросить про свою работу</span></a>
       </div>
     </section>
 
-    <!-- PATH (key section) -->
+    <!-- ===== PATH ===== -->
     <section class="path" id="path" aria-labelledby="path-title">
       <header class="section-head">
         <span class="kicker">Как идём вместе</span>
-        <h2 id="path-title">Не один. Рядом — живой человек,<br>а не «горячая линия»</h2>
-        <p>Не надо ничего знать заранее. На каждом шаге подскажем по-простому: куда идти, что взять, что спросить. Запутался — звонишь и спрашиваешь, не стесняясь.</p>
+        <h2 id="path-title">6 простых шагов.<br>Рядом — живой человек</h2>
+        <p>Заранее ничего знать не нужно. На каждом шаге подскажем по-простому: куда идти, что взять, что спросить. Запутался — звонишь и спрашиваешь.</p>
       </header>
 
       <ol class="path-list">
         <li>
+          <span class="step-num">1</span>
           <h3>Просто поговорим</h3>
-          <p>Без анкет и допросов. Спросим про работу и опыт. Расскажем, подходишь или нет. Без обещаний с потолка.</p>
-          <span class="step-meta">разговор</span>
+          <p>Без анкет и допросов. Спросим про работу и опыт. Скажем честно, подходишь или нет.</p>
         </li>
         <li>
+          <span class="step-num">2</span>
           <h3>Подберём под тебя</h3>
-          <p>Не «куда дырка», а где твой опыт пригодится: руль, ключи, рация, кухня, медицина. Что умеешь — то и пойдёт в дело.</p>
-          <span class="step-meta">подбор</span>
+          <p>Не «куда дырка», а где твой опыт пригодится. По возможности — в тыл, по специальности.</p>
         </li>
         <li>
+          <span class="step-num">3</span>
           <h3>Документы — по списку</h3>
-          <p>Скажем, что взять: паспорт, военник, если есть — права и корочки. Если что потеряно — подскажем, как восстановить.</p>
-          <span class="step-meta">бумаги</span>
+          <p>Скажем, что взять: паспорт, военник, права, корочки. Что-то потерял — подскажем, как восстановить.</p>
         </li>
         <li>
-          <h3>В пункт отбора — подготовленным</h3>
-          <p>Объясним, куда ехать, что говорить и что спрашивать. Не будешь стоять и гадать.</p>
-          <span class="step-meta">пункт отбора</span>
+          <span class="step-num">4</span>
+          <h3>Перевезём в Санкт-Петербург</h3>
+          <p>Поможем добраться и оформиться в городе — чтобы получить именно городскую выплату.</p>
         </li>
         <li>
+          <span class="step-num">5</span>
           <h3>Подписание</h3>
-          <p>Будем на связи, пока всё подпишешь. Если что-то непонятно в бумаге — переведём на нормальный язык.</p>
-          <span class="step-meta">подписание</span>
+          <p>Будем на связи, пока всё подпишешь. Что-то непонятно в бумаге — переведём на нормальный язык.</p>
         </li>
         <li>
+          <span class="step-num">6</span>
           <h3>После — не бросаем</h3>
-          <p>Возникли вопросы по выплатам, семье, документам — звони. У других на этом всё. У нас — нет.</p>
-          <span class="step-meta">поддержка</span>
+          <p>Вопросы по выплатам, семье, документам — звони. У других на этом всё. У нас — нет.</p>
         </li>
       </ol>
     </section>
 
-    <!-- PAYMENTS -->
-    <section class="payments" id="payments" aria-labelledby="payments-title">
-      <header class="section-head align-left">
-        <span class="kicker">Деньги — без сказок</span>
-        <h2 id="payments-title">Сколько реально получишь.<br>По-честному, без подвохов</h2>
-      </header>
-
-      <div class="pay-grid pay-grid--components">
-        <article class="pay-card pay-card--accent">
-          <span class="pay-label">Федеральная выплата</span>
-          <strong contenteditable="true" data-editable="pay-one-amount">400&nbsp;000&nbsp;₽</strong>
-          <p contenteditable="true" data-editable="pay-one-copy">Единовременная федеральная выплата. Объясним, где она указана и как она входит в общую сумму.</p>
-        </article>
-        <article class="pay-card pay-card--accent">
-          <span class="pay-label">Выплата Санкт-Петербурга</span>
-          <strong contenteditable="true" data-editable="pay-two-amount">3&nbsp;500&nbsp;000&nbsp;₽</strong>
-          <p contenteditable="true" data-editable="pay-two-copy">Единовременная выплата из бюджета Санкт-Петербурга. Её важно считать отдельно от федеральной части.</p>
-        </article>
-        <article class="pay-card pay-card--accent">
-          <span class="pay-label">Социальная выплата</span>
-          <strong contenteditable="true" data-editable="pay-three-amount">до&nbsp;600&nbsp;000&nbsp;₽</strong>
-          <p contenteditable="true" data-editable="pay-three-copy">Предусмотрена при выполнении отдельного условия. Мы заранее проговариваем, когда она возможна и что нужно уточнить.</p>
-        </article>
-      </div>
-
-      <div class="pay-grid pay-grid--totals">
-        <article class="pay-card pay-card--total pay-card--bpla">
-          <span class="pay-label">Беспилотники (БПЛА)</span>
-          <strong>4&nbsp;500&nbsp;000&nbsp;₽</strong>
-          <p>3 500 000 ₽ город + 400 000 ₽ федерально + 600 000 ₽ социальная выплата. Ежемесячное довольствие по официальным материалам: <b>от 210&nbsp;000&nbsp;₽</b>.</p>
-        </article>
-        <article class="pay-card pay-card--total">
-          <span class="pay-label">Любые другие войска</span>
-          <strong>4&nbsp;100&nbsp;000&nbsp;₽</strong>
-          <p>3 500 000 ₽ город + 400 000 ₽ федерально + 200 000 ₽ из числа дополнительных выплат. Ежемесячное довольствие — <b>от 210&nbsp;000&nbsp;₽</b>.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- MEDIA -->
-    <section class="media-section" aria-labelledby="media-title">
+    <!-- ===== CONTACTS / DOCS ===== -->
+    <section class="reassure" aria-labelledby="reassure-title">
       <header class="section-head">
-        <span class="kicker">Главный страх — «брошу один»</span>
-        <h2 id="media-title">Не бросим. Будет живой человек<br>и нормальные ответы</h2>
-        <p>Не громкие слова, а простые вещи: список документов, телефон, по которому реально отвечают, и ответы до того, как ты что-то подпишешь.</p>
+        <span class="kicker">Главный страх — «останусь один»</span>
+        <h2 id="reassure-title">Не останешься. Живой человек<br>и нормальные ответы</h2>
       </header>
 
-      <div class="bento">
-        <article class="bento-card bento-photo bento-info bento-docs">
-          <div class="info-card-body">
-            <span class="kicker">Что взять</span>
-            <h3 contenteditable="true" data-editable="photo-main-title">Документы — по списку</h3>
-            <p contenteditable="true" data-editable="photo-main-copy">Скажем по-простому, что взять: паспорт, военник, права и корочки, если есть. Что-то потерял — подскажем, как восстановить. Не будешь бегать кругами.</p>
-            <ul class="info-list">
-              <li><b>Паспорт</b><span>Главный документ, без него никуда.</span></li>
-              <li><b>Военный билет</b><span>Если есть. Если нет или потерял — скажем, что делать.</span></li>
-              <li><b>Права и корочки</b><span>Водительские права, разряды, удостоверения, дипломы.</span></li>
-              <li><b>Семейные документы</b><span>Брак, дети, льготы — если это про тебя.</span></li>
-            </ul>
-          </div>
+      <div class="reassure-grid">
+        <article class="re-card re-docs">
+          <span class="re-kicker">Что взять с собой</span>
+          <h3>Документы — по списку</h3>
+          <ul class="re-list">
+            <li><b>Паспорт</b><span>Главный документ, без него никуда.</span></li>
+            <li><b>Военный билет</b><span>Если есть. Нет или потерял — скажем, что делать.</span></li>
+            <li><b>Права и корочки</b><span>Водительские, разряды, удостоверения, дипломы.</span></li>
+            <li><b>Семейные документы</b><span>Брак, дети, льготы — если это про тебя.</span></li>
+          </ul>
         </article>
 
-        <article class="bento-card bento-video bento-info bento-contacts">
-          <div class="info-card-body">
-            <span class="kicker">Куда звонить</span>
-            <h3 contenteditable="true" data-editable="video-title">Телефон, где реально отвечают</h3>
-            <p contenteditable="true" data-editable="video-copy">Не автоответчик и не «перезвоним когда-нибудь». Снимет трубку человек, объяснит спокойно, ответит на твои вопросы — даже если они кажутся «глупыми».</p>
-            <div class="contact-stack" aria-label="Контакты для связи">
-              <a href="tel:117"><strong>117</strong><span>Начать разговор и узнать базовые условия</span></a>
-              <a href="tel:+78127131319"><strong>+7 (812) 713-13-19</strong><span>Уточнить по Санкт-Петербургу и выплатам</span></a>
-              <a href="tel:122"><strong>122</strong><span>Городская справочная линия</span></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="bento-card bento-text" id="brief">
-          <span class="kicker">Что разберём вместе</span>
-          <h3 contenteditable="true" data-editable="brief-title">Простые вопросы по делу</h3>
-          <p contenteditable="true" data-editable="brief-copy">Подходишь по возрасту и здоровью? Куда возьмут с твоим опытом? Сколько реально на руки и когда? Какие бумаги взять? Что положено семье? Без воды — только то, что важно тебе.</p>
-          <div class="card-actions">
-            <button class="btn btn-soft" type="button" data-copy-brief>
-              <span>Копировать</span>
-            </button>
-            <button class="btn btn-link" type="button" data-clear-text>
-              <span>Сбросить</span>
-            </button>
+        <article class="re-card re-contacts">
+          <span class="re-kicker">Куда звонить</span>
+          <h3>Телефон, где реально отвечают</h3>
+          <p class="re-lead">Не автоответчик. Снимет трубку человек, спокойно объяснит и ответит на любые вопросы — даже если кажутся «глупыми».</p>
+          <div class="contact-stack">
+            <a href="tel:117">
+              <strong>117</strong>
+              <span>Начать разговор и узнать базовые условия</span>
+            </a>
+            <a href="tel:+78127131319">
+              <strong>+7 (812) 713-13-19</strong>
+              <span>Уточнить по Санкт-Петербургу и выплатам</span>
+            </a>
+            <a href="tel:122">
+              <strong>122</strong>
+              <span>Городская справочная линия</span>
+            </a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- VIDEOS -->
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <header class="section-head">
+        <span class="kicker">Частые вопросы</span>
+        <h2 id="faq-title">Отвечаем честно</h2>
+        <p>Коротко по тому, что спрашивают чаще всего. Остальное — по телефону, спокойно и по делу.</p>
+      </header>
+
+      <div class="faq-list" data-faq>
+        <details class="faq-item">
+          <summary>Чем «ядерные силы» отличаются от контракта СВО?</summary>
+          <div class="faq-body"><p>Это два разных направления. <b>Контракт СВО</b> — служба по специальности, по возможности в тылу, выплата до 4 500 000 ₽. <b>Ядерные силы</b> — спокойная работа 5/2 по профессии в стратегических войсках: закрывает срочную службу, полный соцпакет, выплата 3 800 000 ₽, зарплата от 80 000 ₽ в зависимости от города. По телефону подскажем, что больше подходит именно тебе.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Меня сразу бросят в штурм?</summary>
+          <div class="faq-body"><p>Нет. Мы подбираем место под твою специальность. По возможности устраиваем в тыл — на технику, связь, обеспечение, по профессии. Куда именно — зависит от твоего опыта, подготовки и набора. Всё проговариваем заранее.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Что значит «в тыл с полными льготами»?</summary>
+          <div class="faq-body"><p>Это работа в обеспечении и на технике, не на передовой. При этом ты остаёшься участником СВО и сохраняешь все положенные выплаты, статус и социальные гарантии.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Почему выплата именно через Санкт-Петербург больше?</summary>
+          <div class="faq-body"><p>Санкт-Петербург платит за подписание контракта больше, чем большинство регионов. Мы помогаем приехать и оформиться в городе, поэтому ты получаешь городскую выплату — до 4 500 000 ₽ вместо ~800 000 ₽ в регионе.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>А вы реально перевозите из моего города?</summary>
+          <div class="faq-body"><p>Да. Поможем добраться до Санкт-Петербурга и пройти оформление здесь. Как именно это устроить в твоём случае — расскажем по телефону.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>У меня нет военного билета / потерял документы</summary>
+          <div class="faq-body"><p>Не страшно. Подскажем, какие документы нужны и как восстановить недостающие. Бегать кругами не придётся — проведём по списку.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Сколько это стоит для меня?</summary>
+          <div class="faq-body"><p>Консультация и сопровождение — это про помощь, а не про «развод». Все условия проговариваем заранее и честно, до любого решения. Никакого давления.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Что положено моей семье?</summary>
+          <div class="faq-body"><p>У участников СВО есть набор выплат и льгот, в том числе для семьи. Что именно положено в твоём случае — разберём отдельно и по-простому.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Я ещё не решил. Можно просто спросить?</summary>
+          <div class="faq-body"><p>Конечно. Позвони и просто задай вопросы. Это не «заявка» и ни к чему не обязывает. Передумаешь — никто давить не будет.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== VIDEOS ===== -->
     <section class="videos" id="videos" aria-labelledby="videos-title">
       <header class="section-head">
         <span class="kicker">Официально · Минобороны России</span>
-        <h2 id="videos-title">Официальные видеоролики<br>Министерства обороны</h2>
-        <p>Ролики с официального канала Минобороны России на Rutube — о службе по контракту, востребованных направлениях и людях, которые уже сделали этот шаг.</p>
+        <h2 id="videos-title">Официальные видео<br>Министерства обороны</h2>
+        <p>Ролики с официального канала Минобороны России на Rutube — о службе по контракту и людях, которые сделали этот шаг.</p>
       </header>
 
       <div class="video-main-wrap">
         <div class="video-embed video-embed--wide">
-          <iframe
-            src="https://rutube.ru/play/embed/46712d3915f2fc4ee3ee99a7115fc83d"
-            frameborder="0"
-            allow="clipboard-write; autoplay"
-            webkitallowfullscreen
-            mozallowfullscreen
-            allowfullscreen
-            title="Служба по контракту в войсках беспилотных систем"
-          ></iframe>
+          <iframe src="https://rutube.ru/play/embed/46712d3915f2fc4ee3ee99a7115fc83d" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen title="Служба по контракту в войсках беспилотных систем" loading="lazy"></iframe>
         </div>
         <p class="video-caption">Служба по контракту в войсках беспилотных систем · Минобороны России · январь 2026</p>
       </div>
 
       <div>
         <p class="video-shorts-title">Известные люди — о службе по контракту</p>
-        <div class="video-shorts-grid" style="margin-top:16px">
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/8b82cdb3f3558a5ecd2e1b81f3395058" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Александр Сладков"></iframe>
-            </div>
-            <p>Александр Сладков</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/b16ed127aa00f4443aa945f16295daa2" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Иван Охлобыстин"></iframe>
-            </div>
-            <p>Иван Охлобыстин</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/7ae11b678038533a19ceb5c3424c6be6" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Николай Расторгуев"></iframe>
-            </div>
-            <p>Николай Расторгуев</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/55733925e476bcf4e26386854bf9f04c" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Андрей Луговой"></iframe>
-            </div>
-            <p>Андрей Луговой</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/5882d9befe2c4873e4e412c38f5a04b7" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Анна Шафран"></iframe>
-            </div>
-            <p>Анна Шафран</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/df0e24ec8bd94b07763c027f150ca655" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Игорь Коротченко"></iframe>
-            </div>
-            <p>Игорь Коротченко</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/85a00459aaed8504849f35771c287918" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Иван Коновалов"></iframe>
-            </div>
-            <p>Иван Коновалов</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/bd8d91d00742db078edd5e40f89afdd6" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Я Родины защитница"></iframe>
-            </div>
-            <p>Я Родины защитница</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/39a3860858f5693409f0da55e398187d" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Маршал Александр"></iframe>
-            </div>
-            <p>Маршал Александр</p>
-          </div>
-          <div class="video-short-item">
-            <div class="video-embed video-embed--short">
-              <iframe src="https://rutube.ru/play/embed/5510c29ea809007f8da39de670a3d06c" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Виктор Мураховский"></iframe>
-            </div>
-            <p>Виктор Мураховский</p>
-          </div>
+        <div class="video-shorts-grid">
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/8b82cdb3f3558a5ecd2e1b81f3395058" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Александр Сладков" loading="lazy"></iframe></div><p>Александр Сладков</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/b16ed127aa00f4443aa945f16295daa2" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Иван Охлобыстин" loading="lazy"></iframe></div><p>Иван Охлобыстин</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/7ae11b678038533a19ceb5c3424c6be6" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Николай Расторгуев" loading="lazy"></iframe></div><p>Николай Расторгуев</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/55733925e476bcf4e26386854bf9f04c" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Андрей Луговой" loading="lazy"></iframe></div><p>Андрей Луговой</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/5882d9befe2c4873e4e412c38f5a04b7" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Анна Шафран" loading="lazy"></iframe></div><p>Анна Шафран</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/df0e24ec8bd94b07763c027f150ca655" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Игорь Коротченко" loading="lazy"></iframe></div><p>Игорь Коротченко</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/85a00459aaed8504849f35771c287918" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Иван Коновалов" loading="lazy"></iframe></div><p>Иван Коновалов</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/bd8d91d00742db078edd5e40f89afdd6" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Я Родины защитница" loading="lazy"></iframe></div><p>Я Родины защитница</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/39a3860858f5693409f0da55e398187d" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Маршал Александр" loading="lazy"></iframe></div><p>Маршал Александр</p></div>
+          <div class="video-short-item"><div class="video-embed video-embed--short"><iframe src="https://rutube.ru/play/embed/5510c29ea809007f8da39de670a3d06c" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen title="Виктор Мураховский" loading="lazy"></iframe></div><p>Виктор Мураховский</p></div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ===== FINAL CTA ===== -->
     <section class="cta" id="cta" aria-labelledby="cta-title">
+      <div class="cta-bg" aria-hidden="true"></div>
       <div class="cta-inner">
-        <span class="kicker">Следующий шаг</span>
-        <h2 id="cta-title" contenteditable="true" data-editable="cta-title">Один звонок — и рядом живой человек.<br>Без обмана и давления</h2>
-        <p contenteditable="true" data-editable="cta-copy">Расскажи, кем работал и что умеешь. Поговорим по-человечески, подскажем, куда подходишь, и сколько реально получишь. Это не «заявка», а нормальный мужской разговор. Передумаешь — никто не будет давить.</p>
+        <span class="kicker kicker-on-dark">Следующий шаг</span>
+        <h2 id="cta-title">Один звонок — и рядом живой человек</h2>
+        <p>Расскажи, кем работал и что умеешь. Поговорим по-человечески, подберём по специальности, посчитаем твою выплату. Это не «заявка», а нормальный мужской разговор. Передумаешь — никто давить не будет.</p>
 
         <div class="cta-actions">
           <a class="btn btn-primary btn-lg" href="tel:117">
-            <span>Позвонить и поговорить</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Позвонить 117</span>
           </a>
-          <a class="btn btn-ghost btn-lg" href="tel:+78127131319">
-            <span>Спросить про семью</span>
+          <a class="btn btn-ghost-light btn-lg" href="tel:+78127131319">
+            <span>+7 (812) 713-13-19</span>
           </a>
         </div>
 
@@ -410,12 +654,13 @@
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="brand brand-foot">
-      <span class="brand-mark"><span class="flag"><i></i><i></i><i></i></span></span>
+      <span class="brand-mark" aria-hidden="true"><span class="flag"><i></i><i></i><i></i></span></span>
       <span class="brand-text">
         <b>Контракт · Санкт-Петербург</b>
-        <span>Вооружённые силы РФ</span>
+        <span>Служба по контракту · ВС РФ</span>
       </span>
     </div>
     <div class="foot-meta">
@@ -424,8 +669,11 @@
     </div>
   </footer>
 
-  <input hidden type="file" accept="image/*" data-file-input="hero-photo">
-  <div class="toast" data-toast role="status" aria-live="polite"></div>
+  <!-- ===== STICKY MOBILE CALL BAR ===== -->
+  <a class="call-bar" href="tel:117" aria-label="Позвонить 117">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Позвонить — подобрать по специальности</span>
+  </a>
 
   <script src="script.js"></script>
 </body>
