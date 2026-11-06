@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <!-- Рамка -->
+  <rect x="5" y="5" width="1190" height="390" fill="none" stroke="#c9a34e" stroke-width="6" rx="20" ry="20"/>
+
+  <!-- Иконка (звезда + книга) -->
+  <g fill="#c9a34e">
+    <!-- Звезда -->
+    <polygon points="150,40 180,120 260,120 195,170 220,250 150,200 80,250 105,170 40,120 120,120"/>
+    <!-- Книга -->
+    <path d="M70,280 L150,300 L230,280 L230,340 L150,360 L70,340 Z" />
+  </g>
+
+  <!-- Вертикальная линия -->
+  <line x1="300" y1="60" x2="300" y2="340" stroke="#c9a34e" stroke-width="8"/>
+
+  <!-- Текст -->
+  <text x="340" y="130" font-family="Times New Roman, serif" font-size="90" font-weight="bold" fill="#c9a34e">ВЕТЕРАНСКИЙ</text>
+  <text x="340" y="220" font-family="Times New Roman, serif" font-size="90" font-weight="bold" fill="#c9a34e">ПРАВОВОЙ</text>
+  <text x="340" y="310" font-family="Times New Roman, serif" font-size="90" font-weight="bold" fill="#c9a34e">ЦЕНТР</text>
+</svg>
